@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicy Chicken | Premium Fried & Grilled</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #A34934; 
+            --secondary: #C68B35; 
+            --bg-light: #FDFBF7; 
+            --bg-dark: #2D1B17;
+            --text-dark: #3E2723;
+            --text-muted: #6D4C41;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); scroll-behavior: smooth; }
+
+        /* Navbar */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: var(--white);
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { height: 45px; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            display: flex; align-items: center; padding: 80px 8%; min-height: 85vh; gap: 50px;
+        }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--primary); line-height: 1.1; margin-bottom: 20px; }
+        .hero-img { flex: 1; text-align: right; }
+        .hero-img img { width: 100%; max-width: 500px; animation: float 5s ease-in-out infinite; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        /* About Section */
+        .about { background: var(--white); padding: 100px 8%; display: flex; align-items: center; gap: 60px; }
+        .about-img { flex: 1; }
+        .about-img img { width: 100%; border-radius: 20px; box-shadow: 20px 20px 0 var(--secondary); }
+        .about-text { flex: 1; }
+        .about-text h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .about-text p { margin-bottom: 20px; color: var(--text-muted); line-height: 1.8; }
+
+        /* Menu Section */
+        .menu-section { padding: 100px 8%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary); }
+        
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .menu-item { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #f0f0f0; }
+        .menu-item:hover { transform: translateY(-10px); }
+        .menu-thumb { width: 100%; height: 250px; object-fit: cover; }
+        .menu-content { padding: 25px; }
+        .menu-content h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px; }
+        .menu-content p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
+        .menu-footer { display: flex; justify-content: space-between; align-items: center; }
+        .price { color: var(--primary); font-weight: 700; font-size: 1.2rem; }
+        .btn-order { background: var(--primary); color: white; padding: 8px 18px; border-radius: 5px; text-decoration: none; font-size: 0.8rem; }
+
+        /* Footer */
+        footer { background: var(--bg-dark); color: #D7CCC8; padding: 80px 8% 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+        .footer-logo h2 { color: var(--white); font-family: 'Playfair Display', serif; margin-bottom: 15px; }
+        .footer-col h4 { color: var(--secondary); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-col p { font-size: 0.9rem; margin-bottom: 10px; }
+        
+        .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; font-size: 0.8rem; opacity: 0.7; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero, .about { flex-direction: column; text-align: center; }
+            .hero-img { order: -1; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="Spicy Chicken Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="https://wa.me/628xxxxxxxxxx" style="color: var(--primary); font-weight: 700;">Order Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+    <h1>The Art of Spicy Chicken</h1>
+    <p style="margin-bottom: 25px;">Perpaduan sempurna antara bumbu tradisional dan teknik memasak modern. Kami menyajikan ayam berkualitas tinggi dengan level pedas yang menantang adrenalin Anda.</p>
+    
+    <a href="#menu" class="btn-order" style="display: inline-block; padding: 15px 35px; font-size: 1rem; margin-top: 10px;">
+        Explore Our Menu
+    </a>
+</div>
+        <div class="hero-img">
+            <img src="logo.png" alt="Main Chicken Image">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images.jpg" alt="Kitchen Story">
+        </div>
+        <div class="about-text">
+            <h2>Our Story</h2>
+            <p>Dimulai dari dapur kecil di sudut kota, Spicy Chicken lahir dari obsesi kami terhadap bumbu rempah Indonesia dan kecintaan pada rasa pedas yang autentik.</p>
+            <p>Setiap potong ayam kami melalui proses marinasi selama 12 jam untuk memastikan rasa meresap hingga ke bagian terdalam. Kami percaya bahwa makanan enak haruslah jujur, segar, dan dibuat dengan hati.</p>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <div class="section-header">
+            <h2>Signature Menu</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="1.avif" alt="Ayam Goreng" class="menu-thumb">
+                <div class="menu-content">
+                    <h3>Fried Spicy Leg</h3>
+                    <p>Paha bawah super crispy dengan taburan chili flakes premium dan bumbu rahasia.</p>
+                    <div class="menu-footer">
+                        <span class="price">Rp 18.000</span>
+                        <a href="#" class="btn-order">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="2.avif" alt="Ayam Bakar" class="menu-thumb">
+                <div class="menu-content">
+                    <h3>Smoked Grilled Breast</h3>
+                    <p>Dada ayam tanpa tulang yang dipanggang lambat dengan olesan madu pedas.</p>
+                    <div class="menu-footer">
+                        <span class="price">Rp 22.000</span>
+                        <a href="#" class="btn-order">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="3.avif" alt="Ayam Goreng" class="menu-thumb">Wings" class="menu-thumb">
+                <div class="menu-content">
+                    <h3>Atomic Wings</h3>
+                    <p>6 sayap ayam dengan saus lava yang sangat pedas (Level 5+).</p>
+                    <div class="menu-footer">
+                        <span class="price">Rp 25.000</span>
+                        <a href="#" class="btn-order">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <h2>Spicy Chicken.</h2>
+                <p>Menyajikan kebahagiaan melalui rasa pedas yang elegan sejak 2023.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Open Hours</h4>
+                <p>Senin – Jumat: 10:00 - 21:00</p>
+                <p>Sabtu – Minggu: 09:00 - 22:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📍 Jl. Kuliner Mewah No. 45</p>
+                <p>📞 +62 812-3456-7890</p>
+                <p>📧 hello@spicychicken.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 <strong>Spicy Chicken Fried & Grilled</strong>. Designed for Excellence.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
